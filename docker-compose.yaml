@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  bot:
+    build: .
+    container_name: ProjectWAAAGH_discord
+    restart: always
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - MYSQL_HOST=<host of existing MySQL database>
+      - MYSQL_USER=<username>
+      - MYSQL_PASSWORD=<password>
+      - MYSQL_DATABASE=<database name>
+    networks:
+      - botnet
+
+networks:
+  botnet:
+
